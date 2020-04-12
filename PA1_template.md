@@ -89,7 +89,7 @@ ggplot(sum, aes(stepsDay)) + geom_histogram(bins = 20) + ylab("Number of Days") 
 ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 ```
 
-![plot of chunk histogram](figure/histogram-1.png)
+![plot of chunk plot1](figure/plot1-1.png)
 
 ## 3. Mean and median of steps taken each day
 
@@ -131,7 +131,7 @@ ggplot(mean,aes(as.numeric(rownames(mean)),meanSteps)) + geom_line(color="blue")
     ylab("Number of Steps") + xlab("Intervals of the Day")
 ```
 
-![plot of chunk day pattern plot](figure/day pattern plot-1.png)
+![plot of chunk plot2](figure/plot2-1.png)
 
 ## 5. 5-minute interval with the maximum steps
 
@@ -196,7 +196,7 @@ ggplot(sum2, aes(stepsDay)) + geom_histogram(bins = 20) + ylab("Number of Days")
     xlab("Total steps per Day")
 ```
 
-![plot of chunk sum2](figure/sum2-1.png)
+![plot of chunk plot3](figure/plot3-1.png)
 
 We can see that the number of days per bin has increased but the shape is mostly the same.
 
@@ -263,7 +263,7 @@ g2 <- ggplot(mean2, aes(interval,weekend)) + geom_line(color="blue") + ylim(rng)
 grid.arrange(g1, g2, nrow=1, ncol=2)
 ```
 
-![plot of chunk weekend pattern plot](figure/weekend pattern plot-1.png)
+![plot of chunk plot4](figure/plot4-1.png)
 
 We conclude there is significant diference in activity patterns during weekdays and weekends.
 

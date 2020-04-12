@@ -3,6 +3,7 @@ title: "PA1_template"
 author: "Leixuri"
 date: "12/4/2020"
 output: html_document
+keep_md: true 
 ---
 
 ```{r setup, include=FALSE}
@@ -54,7 +55,7 @@ names(sum) <- "stepsDay"
 
 Now we plot the histogram.
 
-```{r histogram}
+```{r plot1}
 library(ggplot2)
 ggplot(sum, aes(stepsDay)) + geom_histogram(bins = 20) + ylab("Number of Days") + 
     xlab("Total steps per Day")
@@ -82,7 +83,7 @@ names(mean) <- "meanSteps"
 Now we plot the result to see if there is an average daily activity pattern.
 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r day pattern plot}
+```{r plot2}
 ggplot(mean,aes(as.numeric(rownames(mean)),meanSteps)) + geom_line(color="blue") + 
     ylab("Number of Steps") + xlab("Intervals of the Day")
 ```
@@ -125,7 +126,7 @@ sum(is.na(data2$steps))
 
 we create the same plot that in step 2 to see the influence of NAs.
 
-```{r sum2}
+```{r plot3}
 sum2 <- as.data.frame(tapply(data2$steps,data2$date,sum))
 names(sum2) <- "stepsDay"
 
@@ -168,7 +169,7 @@ mean2$interval <- as.numeric(rownames(mean2))
 
 Now we plot the result to see if there is an average daily activity pattern difference between weekdays and weekends.
 
-```{r weekday/weekend pattern plot}
+```{r plot4}
 library(gridExtra)
 rng <- range(mean2$weekday,mean2$weekend)
 g1 <- ggplot(mean2, aes(interval,weekday)) + geom_line(color="red") + ylim(rng) +
