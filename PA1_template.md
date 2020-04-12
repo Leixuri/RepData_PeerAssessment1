@@ -263,7 +263,7 @@ g2 <- ggplot(mean2, aes(interval,weekend)) + geom_line(color="blue") + ylim(rng)
 grid.arrange(g1, g2, nrow=1, ncol=2)
 ```
 
-![plot of chunk weekday/weekend pattern plot](figure/weekday/weekend pattern plot-1.png)
+![plot of chunk weekend pattern plot](figure/weekend pattern plot-1.png)
 
 We conclude there is significant diference in activity patterns during weekdays and weekends.
 
